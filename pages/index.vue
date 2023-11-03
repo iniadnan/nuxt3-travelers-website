@@ -1,4 +1,45 @@
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import Swiper from "swiper";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+onMounted(() => {
+  const swiper = new Swiper(".swiper-container", {
+    // Swiper options here
+    slidesPerView: "auto",
+    spaceBetween: 18,
+    modules: [Navigation, Autoplay],
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".popular-destination-swiper-button-next",
+      prevEl: ".popular-destination-swiper-button-prev",
+    },
+    breakpoints: {
+      300: {
+        slidesPerView: "auto",
+        spaceBetween: 12,
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 18,
+      },
+      1040: {
+        slidesPerView: 3,
+        spaceBetween: 12,
+      },
+      1240: {
+        slidesPerView: 3,
+        spaceBetween: 18,
+      },
+    },
+  });
+});
+</script>
 
 <template>
   <!-- NAV -->
@@ -490,8 +531,19 @@
         </div>
       </section>
       <!-- LIST OF DESTINATIONS -->
-      <div class="swiper popular-destination-swiper">
-        <div class="swiper-wrapper">
+      <div class="w-full overflow-hidden">
+        <div class="swiper-container popular-destination-swiper">
+          <div class="swiper-wrapper">
+            <CardDestination title="Bali" image="/images/destinations-bali.webp" price="380" location="Indonesia" star="5.0" />
+            <CardDestination title="Santorini" image="/images/destinations-santorini.webp" price="475" location="Greece" star="4.5" />
+            <CardDestination title="Perhentian Island" image="/images/destinations-perhentian.webp" price="410" location="Malaysia" star="4.9" />
+            <CardDestination title="Bali" image="/images/destinations-bali.webp" price="380" location="Indonesia" star="5.0" />
+            <CardDestination title="Santorini" image="/images/destinations-santorini.webp" price="475" location="Greece" star="4.5" />
+            <CardDestination title="Perhentian Island" image="/images/destinations-perhentian.webp" price="410" location="Malaysia" star="4.9" />
+            <CardDestination title="Bali" image="/images/destinations-bali.webp" price="380" location="Indonesia" star="5.0" />
+            <CardDestination title="Santorini" image="/images/destinations-santorini.webp" price="475" location="Greece" star="4.5" />
+            <CardDestination title="Perhentian Island" image="/images/destinations-perhentian.webp" price="410" location="Malaysia" star="4.9" />
+          </div>
         </div>
       </div>
     </div>
