@@ -1,6 +1,158 @@
 <script setup></script>
 
 <template>
+    <Nav />
+    <!-- SPONSOR -->
+    <section>
+        <div class="container-travelers pt-[25px] pb-8 md:pb-10 lg:pb-[55px] px-5 md:px-5 lg:px-0">
+            <!-- SPONSOR LIST -->
+            <div class="flex items-center">
+                <div class="w-1/4">
+                    <img class="h-auto w-full" src="/images/sponsor-expedia.png" height="100" width="100"
+                        alt="expedia">
+                </div>
+                <div class="w-1/4">
+                    <img class="h-auto w-full" src="/images/sponsor-skyscanner.png" height="100" width="100"
+                        alt="skyscanner">
+                </div>
+                <div class="w-1/4">
+                    <img class="h-auto w-full" src="/images/sponsor-turkish.png" height="100" width="100"
+                        alt="turkish">
+                </div>
+                <div class="w-1/4">
+                    <img class="h-auto w-full" src="/images/sponsor-sunexpress.png" height="100" width="100"
+                        alt="sunexpress">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EXCAPE TO PARADISE -->
+    <section id="escape-paradise">
+        <div class="container-travelers py-[90px] md:py-[100px] lg:py-[120px] px-5 md:px-5 lg:px-0">
+            <div class="flex flex-wrap items-start justify-between">
+                <!-- ESCAPE PARADISE LEFT -->
+                <div class="order-2 md:order-1 md:max-w-[529px] w-full">
+                    <h2
+                        class="font-medium text-[32px] md:text-[32px] lg:text-[36px] xl:text-[40px] text-[#1E1E1E] leading-[40px] md:leading-[40px] lg:leading-[48px] xl:leading-[52px] mb-4">
+                        <div class="inline-block h-[47px] overflow-hidden"><span
+                                class="escape-paradise__main-text inline-block transform translate-y-[50px]"
+                                style="--animation-order: 1;">Escape to
+                                paradise: discover</span></div>
+                        <div class="inline-block h-[47px] overflow-hidden"><span
+                                class="escape-paradise__main-text inline-block transform translate-y-[50px]"
+                                style="--animation-order: 2;">unforgettable
+                                luxury at our</span></div>
+                        <div class="inline-block h-[47px] overflow-hidden"><span
+                                class="escape-paradise__main-text inline-block transform translate-y-[50px]"
+                                style="--animation-order: 3;">exquisite
+                                travel hotel</span></div>
+                    </h2>
+                    <p class="font-medium text-[19px] md:text-[19px] lg:text-[21.48px] text-[#8A8A8A]">We provide hotels
+                        for your vacation to stay
+                        comfortable</p>
+                    <div
+                        class="flex items-center gap-x-[22px] md:gap-x-[25px] mt-[25px] md:mt-[29px] lg:mt-[32px] xl:mt-[35px]">
+                        <div
+                            class="flex items-center gap-x-2.5 py-[5px] pl-[7px] pr-[19px] bg-[#E5F0F5] rounded-[10px]">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="10" fill="#1E1E1E" />
+                                <path
+                                    d="M25 27H27V19H21V27H23V21H25V27ZM11 27V12C11 11.7348 11.1054 11.4804 11.2929 11.2929C11.4804 11.1054 11.7348 11 12 11H26C26.2652 11 26.5196 11.1054 26.7071 11.2929C26.8946 11.4804 27 11.7348 27 12V17H29V27H30V29H10V27H11ZM15 19V21H17V19H15ZM15 23V25H17V23H15ZM15 15V17H17V15H15Z"
+                                    fill="#EDEDED" />
+                            </svg>
+                            <span
+                                class="font-medium text-base md:text-[18px] lg:text-[20px] text-[#1E1E1E]">Hotel</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-x-2.5 py-[5px] pl-[7px] pr-[19px] bg-[#E5F0F5] rounded-[10px]">
+                            <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="40" height="40" rx="10" fill="#1E1E1E" />
+                                <mask id="mask0_16_613" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="9"
+                                    y="13" width="22" height="15">
+                                    <path d="M10 14.5V26.5M30 26.5V23H10" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M19 16.5V23H30V18C30 17.6022 29.842 17.2206 29.5607 16.9393C29.2794 16.658 28.8978 16.5 28.5 16.5H19Z"
+                                        fill="white" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M14.5 20C15.3284 20 16 19.3284 16 18.5C16 17.6716 15.3284 17 14.5 17C13.6716 17 13 17.6716 13 18.5C13 19.3284 13.6716 20 14.5 20Z"
+                                        fill="white" stroke="white" stroke-width="2" />
+                                </mask>
+                                <g mask="url(#mask0_16_613)">
+                                    <path d="M8 8.5H32V32.5H8V8.5Z" fill="#EDEDED" />
+                                </g>
+                            </svg>
+                            <span class="font-medium text-base md:text-[18px] lg:text-[20px] text-[#1E1E1E]">Sleep
+                                Room</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-x-[22px] md:gap-x-[25px] mt-[25px] md:mt-[29px] lg:mt-[32px] xl:mt-[55px]">
+                        <a href="/"
+                            class="h-[45px] inline-flex items-center justify-center px-[13px] font-bold text-base text-[#EDEDED] rounded-[10px]"
+                            style="background: linear-gradient(180deg, #0077ED -112.22%, #7BF9D3 196.67%);">Book
+                            a hotel now</a>
+                        <a href="/" class="h-[45px]" aria-label="Learn More">
+                            <svg class="h-full" width="154" height="45" viewBox="0 0 154 45" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M44.2266 26.0469V28H36.9375V16.7266H39.2969V26.0469H44.2266ZM49.0625 21.1328C48.0625 21.1328 47.3438 21.8906 47.2656 22.9375H50.8203C50.7734 21.8672 50.0781 21.1328 49.0625 21.1328ZM50.8516 25.4375H52.9453C52.6953 27.0781 51.1953 28.1797 49.125 28.1797C46.5469 28.1797 45 26.5312 45 23.8516C45 21.1797 46.5625 19.4453 49.0391 19.4453C51.4766 19.4453 53.0156 21.0938 53.0156 23.6406V24.3359H47.2422V24.4766C47.2422 25.6719 48 26.4922 49.1641 26.4922C50 26.4922 50.6406 26.0781 50.8516 25.4375ZM57.4297 26.4844C58.4219 26.4844 59.2422 25.8359 59.2422 24.9297V24.3203L57.4766 24.4297C56.625 24.4922 56.1406 24.875 56.1406 25.4688C56.1406 26.0938 56.6562 26.4844 57.4297 26.4844ZM56.6797 28.1328C55.0859 28.1328 53.875 27.1016 53.875 25.5938C53.875 24.0703 55.0469 23.1875 57.1328 23.0625L59.2422 22.9375V22.3828C59.2422 21.6016 58.6953 21.1484 57.8359 21.1484C56.9844 21.1484 56.4453 21.5703 56.3359 22.1875H54.25C54.3359 20.5625 55.7188 19.4453 57.9375 19.4453C60.0859 19.4453 61.4844 20.5547 61.4844 22.2422V28H59.2812V26.7188H59.2344C58.7656 27.6094 57.7266 28.1328 56.6797 28.1328ZM62.9609 28V19.625H65.1641V21.1328H65.2109C65.5078 20.0703 66.2188 19.4922 67.2031 19.4922C67.4688 19.4922 67.6953 19.5312 67.8516 19.5781V21.5859C67.6641 21.5078 67.3516 21.4531 67.0234 21.4531C65.8984 21.4531 65.2422 22.1406 65.2422 23.3203V28H62.9609ZM68.7891 28V19.625H70.9922V21.1172H71.0391C71.4844 20.0781 72.3672 19.4688 73.6562 19.4688C75.5156 19.4688 76.5625 20.6406 76.5625 22.6016V28H74.2812V23.0781C74.2812 21.9844 73.7656 21.3594 72.7422 21.3594C71.7188 21.3594 71.0703 22.1094 71.0703 23.1953V28H68.7891ZM81.1797 28V19.625H83.3828V21.1406H83.4297C83.7812 20.1328 84.6797 19.4688 85.8203 19.4688C87.0312 19.4688 87.875 20.0938 88.1562 21.1875H88.2031C88.5781 20.1328 89.5781 19.4688 90.8047 19.4688C92.4453 19.4688 93.5469 20.5938 93.5469 22.2812V28H91.2656V22.8516C91.2656 21.8828 90.7812 21.3516 89.8984 21.3516C89.0312 21.3516 88.4609 21.9844 88.4609 22.9141V28H86.2656V22.7812C86.2656 21.8828 85.7578 21.3516 84.9141 21.3516C84.0469 21.3516 83.4609 22.0078 83.4609 22.9453V28H81.1797ZM98.8359 28.1797C96.3047 28.1797 94.6875 26.5547 94.6875 23.8047C94.6875 21.0938 96.3281 19.4453 98.8359 19.4453C101.344 19.4453 102.984 21.0859 102.984 23.8047C102.984 26.5625 101.367 28.1797 98.8359 28.1797ZM98.8359 26.4375C99.9531 26.4375 100.664 25.4922 100.664 23.8125C100.664 22.1484 99.9453 21.1875 98.8359 21.1875C97.7266 21.1875 97 22.1484 97 23.8125C97 25.4922 97.7109 26.4375 98.8359 26.4375ZM104.164 28V19.625H106.367V21.1328H106.414C106.711 20.0703 107.422 19.4922 108.406 19.4922C108.672 19.4922 108.898 19.5312 109.055 19.5781V21.5859C108.867 21.5078 108.555 21.4531 108.227 21.4531C107.102 21.4531 106.445 22.1406 106.445 23.3203V28H104.164ZM113.469 21.1328C112.469 21.1328 111.75 21.8906 111.672 22.9375H115.227C115.18 21.8672 114.484 21.1328 113.469 21.1328ZM115.258 25.4375H117.352C117.102 27.0781 115.602 28.1797 113.531 28.1797C110.953 28.1797 109.406 26.5312 109.406 23.8516C109.406 21.1797 110.969 19.4453 113.445 19.4453C115.883 19.4453 117.422 21.0938 117.422 23.6406V24.3359H111.648V24.4766C111.648 25.6719 112.406 26.4922 113.57 26.4922C114.406 26.4922 115.047 26.0781 115.258 25.4375Z"
+                                    fill="url(#paint0_linear_12_310)" />
+                                <rect x="1" y="1" width="152" height="43" rx="9" stroke="url(#paint1_linear_12_310)"
+                                    stroke-width="2" />
+                                <defs>
+                                    <linearGradient id="paint0_linear_12_310" x1="77" y1="-8.32222" x2="77" y2="50.3667"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#0077ED" />
+                                        <stop offset="1" stop-color="#7BF9D3" />
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_12_310" x1="77" y1="-50.5" x2="77" y2="88.5"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#0077ED" />
+                                        <stop offset="1" stop-color="#7BF9D3" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- ESCAPE PARADISE RIGHT -->
+                <div class="order-1 md:order-2 md:max-w-[400px] w-full relative mb-8 md:mb-0">
+                    <img class="w-full object-cover rounded-[20px]" src="/images/escape.webp" height="400"
+                        width="400" alt="Escape to paradise">
+                    <!-- BOX BOTTOM -->
+                    <div
+                        class="flex items-center gap-x-[15px] absolute right-2 md:right-4 lg:right-6 bottom-6 p-[10px] md:p-[11px] lg:p-[13px] bg-white rounded-[18px]">
+                        <div class="flex items-center relative">
+                            <img class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative left-0 z-[1]"
+                                height="42" width="42" src="/images/escape-user-1.png" alt="User 1">
+                            <img class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[8px] z-[2]"
+                                height="42" width="42" src="/images/escape-user-2.png" alt="User 2">
+                            <img class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[18px] z-[3]"
+                                height="42" width="42" src="/images/escape-user-3.png" alt="User 3">
+                            <img class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[28px] z-[4]"
+                                height="42" width="42" src="/images/escape-user-4.png" alt="User 4">
+                            <img class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[38px] z-[5]"
+                                height="42" width="42" src="/images/escape-user-plus.png" alt="User 1">
+                        </div>
+                        <div class="h-[42px] w-px bg-[#E5F0F5]"></div>
+                        <div class="flex items-center gap-x-2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 17.27L16.15 19.78C16.91 20.24 17.84 19.56 17.64 18.7L16.54 13.98L20.21 10.8C20.88 10.22 20.52 9.12001 19.64 9.05001L14.81 8.64001L12.92 4.18001C12.58 3.37001 11.42 3.37001 11.08 4.18001L9.19001 8.63001L4.36001 9.04001C3.48001 9.11001 3.12001 10.21 3.79001 10.79L7.46001 13.97L6.36001 18.69C6.16001 19.55 7.09001 20.23 7.85001 19.77L12 17.27Z"
+                                    fill="#FFB800" />
+                            </svg>
+                            <span class="font-medium text-[20px] text-[#1E1E1E]">4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- BOOKING TRAVEL -->
     <main>
         <div class="container-travelers pb-[90px] md:pb-[100px] lg:pb-[120px] px-5 md:px-5 lg:px-0">
