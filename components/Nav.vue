@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+const props = defineProps(['styles'])
+</script>
 
 <template>
     <!-- NAV -->
@@ -17,15 +19,15 @@
                 </div>
                 <!-- NAV LOGO -->
                 <div class="w-4/12 md:w-auto">
-                    <a href="/" class="nav-anchor font-heavitas text-base">TRAVELERS</a>
+                    <a href="/" class="font-heavitas text-base" :style="{ color: props.styles.color }">TRAVELERS</a>
                 </div>
                 <div class="hidden md:flex md:w-auto md:gap-x-[22px] lg:gap-x-[28px] xl:gap-x-[35px]">
-                    <a href="/" class="nav-anchor font-medium text-base">Home</a>
-                    <a href="/" class="nav-anchor font-medium text-base">About Us</a>
-                    <a href="/" class="nav-anchor font-medium text-base">Destinations</a>
-                    <a href="/" class="nav-anchor font-medium text-base">Travel Deals</a>
-                    <a href="/" class="nav-anchor font-medium text-base">Blog</a>
-                    <a href="/" class="nav-anchor font-medium text-base">Services</a>
+                    <a href="/" class="font-medium text-base" :style="{ color: props.styles.color }">Home</a>
+                    <a href="/" class="font-medium text-base" :style="{ color: props.styles.color }">About Us</a>
+                    <a href="/" class="font-medium text-base" :style="{ color: props.styles.color }">Destinations</a>
+                    <a href="/" class="font-medium text-base" :style="{ color: props.styles.color }">Travel Deals</a>
+                    <a href="/" class="font-medium text-base" :style="{ color: props.styles.color }">Blog</a>
+                    <a href="/" class="font-medium text-base" :style="{ color: props.styles.color }">Services</a>
                 </div>
                 <!-- BOOK A TRAVEL -->
                 <div class="w-4/12 md:w-auto flex justify-end ml-auto">
@@ -40,6 +42,6 @@
             </div>
         </div>
         <!-- SLIDE WHEN SCROLL -->
-        <div class="absolute w-full h-full bg-white top-0 transform -translate-y-full transition duration-500"></div>
+        <div class="absolute w-full h-full bg-white top-0 transform -translate-y-full transition duration-500" :style="{ transform: props.styles.transform }"></div>
     </nav>
 </template>

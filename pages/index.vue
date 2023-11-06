@@ -1,11 +1,32 @@
 <script setup>
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import Swiper from "swiper";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+const stylesNav = ref({
+  transform: "translateY(-100%)",
+  color: "#EDEDED",
+});
+
+function isScrolling() {
+  if (window.scrollY > 100) {
+    stylesNav.value = {
+      transform: "translateY(0%)",
+      color: "#1E1E1E",
+    };
+  }
+  if (window.scrollY < 100) {
+    stylesNav.value = {
+      transform: "translateY(-100%)",
+      color: "#EDEDED",
+    };
+  }
+}
+
 onMounted(() => {
+  window.addEventListener("scroll", isScrolling);
   const swiper = new Swiper(".swiper-container", {
     // Swiper options here
     slidesPerView: "auto",
@@ -43,7 +64,7 @@ onMounted(() => {
 
 <template>
   <!-- NAV -->
-  <Nav />
+  <Nav :styles="stylesNav" />
   <!-- HEADER -->
   <header id="header">
     <div class="h-screen w-full flex flex-nowrap relative overflow-hidden">
@@ -534,15 +555,69 @@ onMounted(() => {
       <div class="w-full overflow-hidden">
         <div class="swiper-container popular-destination-swiper">
           <div class="swiper-wrapper">
-            <CardDestination title="Bali" image="/images/destinations-bali.webp" price="380" location="Indonesia" star="5.0" />
-            <CardDestination title="Santorini" image="/images/destinations-santorini.webp" price="475" location="Greece" star="4.5" />
-            <CardDestination title="Perhentian Island" image="/images/destinations-perhentian.webp" price="410" location="Malaysia" star="4.9" />
-            <CardDestination title="Bali" image="/images/destinations-bali.webp" price="380" location="Indonesia" star="5.0" />
-            <CardDestination title="Santorini" image="/images/destinations-santorini.webp" price="475" location="Greece" star="4.5" />
-            <CardDestination title="Perhentian Island" image="/images/destinations-perhentian.webp" price="410" location="Malaysia" star="4.9" />
-            <CardDestination title="Bali" image="/images/destinations-bali.webp" price="380" location="Indonesia" star="5.0" />
-            <CardDestination title="Santorini" image="/images/destinations-santorini.webp" price="475" location="Greece" star="4.5" />
-            <CardDestination title="Perhentian Island" image="/images/destinations-perhentian.webp" price="410" location="Malaysia" star="4.9" />
+            <CardDestination
+              title="Bali"
+              image="/images/destinations-bali.webp"
+              price="380"
+              location="Indonesia"
+              star="5.0"
+            />
+            <CardDestination
+              title="Santorini"
+              image="/images/destinations-santorini.webp"
+              price="475"
+              location="Greece"
+              star="4.5"
+            />
+            <CardDestination
+              title="Perhentian Island"
+              image="/images/destinations-perhentian.webp"
+              price="410"
+              location="Malaysia"
+              star="4.9"
+            />
+            <CardDestination
+              title="Bali"
+              image="/images/destinations-bali.webp"
+              price="380"
+              location="Indonesia"
+              star="5.0"
+            />
+            <CardDestination
+              title="Santorini"
+              image="/images/destinations-santorini.webp"
+              price="475"
+              location="Greece"
+              star="4.5"
+            />
+            <CardDestination
+              title="Perhentian Island"
+              image="/images/destinations-perhentian.webp"
+              price="410"
+              location="Malaysia"
+              star="4.9"
+            />
+            <CardDestination
+              title="Bali"
+              image="/images/destinations-bali.webp"
+              price="380"
+              location="Indonesia"
+              star="5.0"
+            />
+            <CardDestination
+              title="Santorini"
+              image="/images/destinations-santorini.webp"
+              price="475"
+              location="Greece"
+              star="4.5"
+            />
+            <CardDestination
+              title="Perhentian Island"
+              image="/images/destinations-perhentian.webp"
+              price="410"
+              location="Malaysia"
+              star="4.9"
+            />
           </div>
         </div>
       </div>
