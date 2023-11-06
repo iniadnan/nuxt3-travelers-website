@@ -5,9 +5,17 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+const isMounted = ref(false);
+
 const stylesNav = ref({
   transform: "translateY(-100%)",
   color: "#EDEDED",
+});
+
+const stylesHeader = ref({
+  widthLeft: "8%",
+  widthRight: "92%",
+  transformTo0: "translateY(0px)",
 });
 
 function isScrolling() {
@@ -27,6 +35,9 @@ function isScrolling() {
 
 onMounted(() => {
   window.addEventListener("scroll", isScrolling);
+
+  isMounted.value = true;
+
   const swiper = new Swiper(".swiper-container", {
     // Swiper options here
     slidesPerView: "auto",
@@ -69,7 +80,7 @@ onMounted(() => {
   <header id="header">
     <div class="h-screen w-full flex flex-nowrap relative overflow-hidden">
       <!-- HEADER LEFT -->
-      <div class="header-left h-full">
+      <div class="header-left h-full" :style="isMounted ? `width: ${stylesHeader.widthLeft}` : '' ">
         <img
           class="h-full w-full object-cover"
           height="800"
@@ -79,7 +90,7 @@ onMounted(() => {
         />
       </div>
       <!-- HEADER RIGHT: MAIN IMAGE -->
-      <div class="header-right h-full relative">
+      <div class="header-right h-full relative" :style="isMounted ? `width: ${stylesHeader.widthRight}` : '' ">
         <!-- TEXT & 1M IMAGE -->
         <div
           class="absolute top-[80%] md:top-1/2 transform -translate-y-1/2 left-0 z-10"
@@ -250,7 +261,7 @@ onMounted(() => {
       >
         <div class="h-[120px] md:h-[150px] overflow-hidden">
           <h1
-            class="header__main-text transform translate-y-[120px] md:translate-y-[150px] font-medium text-[60px] md:text-[72px] lg:text-[80px] xl:text-[100px] text-white text-center whitespace-nowrap leading-none md:leading-normal mb-5 md:mb-0"
+            class="header__main-text transform translate-y-[120px] md:translate-y-[150px] font-medium text-[60px] md:text-[72px] lg:text-[80px] xl:text-[100px] text-white text-center whitespace-nowrap leading-none md:leading-normal mb-5 md:mb-0" :style="isMounted ? `transform: ${stylesHeader.transformTo0}` : '' "
           >
             Let’s travel<br class="block md:hidden" />
             the world
@@ -258,7 +269,7 @@ onMounted(() => {
         </div>
         <div class="h-[68px] md:h-[40px] overflow-hidden">
           <p
-            class="header__secondary-text transform translate-y-[68px] md:translate-y-[40px] max-w-10/12 mx-auto font-medium text-[20px] md:text-[22px] lg:text-[26px] text-white text-center"
+            class="header__secondary-text transform translate-y-[68px] md:translate-y-[40px] max-w-10/12 mx-auto font-medium text-[20px] md:text-[22px] lg:text-[26px] text-white text-center" :style="isMounted ? `transform: ${stylesHeader.transformTo0}` : '' "
           >
             Explore destinations, places, and unforgettable experiences
           </p>
