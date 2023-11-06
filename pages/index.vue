@@ -44,7 +44,7 @@ function isScrolling() {
   }
 
   // WHEN WINDOW IN AREA NOTIFICATION
-  if (window.scrollY > positionNotification.value - 650) {
+  if (window.scrollY > positionNotification.value - 450) {
     isScrollToNotification.value = true;
   }
 }
