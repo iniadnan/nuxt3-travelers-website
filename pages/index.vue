@@ -6,6 +6,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const isMounted = ref(false);
+const isScrollToEscapeParadise = ref(false);
+const isScrollToNotification = ref(false);
+const refEscapeParadise = ref(false);
+const refNotification = ref(false);
+const positionEscapeParadise = ref(0);
+const positionNotification = ref(0);
 
 const stylesNav = ref({
   transform: "translateY(-100%)",
@@ -31,12 +37,27 @@ function isScrolling() {
       color: "#EDEDED",
     };
   }
+
+  // WHEN WINDOW IN AREA ESCAPE PARADISE
+  if (window.scrollY > positionEscapeParadise.value - 450) {
+    isScrollToEscapeParadise.value = true;
+  }
+
+  // WHEN WINDOW IN AREA NOTIFICATION
+  if (window.scrollY > positionNotification.value - 650) {
+    isScrollToNotification.value = true;
+  }
 }
 
 onMounted(() => {
   window.addEventListener("scroll", isScrolling);
 
   isMounted.value = true;
+
+  positionEscapeParadise.value =
+    refEscapeParadise.value.getBoundingClientRect().top;
+  positionNotification.value =
+    refNotification.value.getBoundingClientRect().top;
 
   const swiper = new Swiper(".swiper-container", {
     // Swiper options here
@@ -80,7 +101,10 @@ onMounted(() => {
   <header id="header">
     <div class="h-screen w-full flex flex-nowrap relative overflow-hidden">
       <!-- HEADER LEFT -->
-      <div class="header-left h-full" :style="isMounted ? `width: ${stylesHeader.widthLeft}` : '' ">
+      <div
+        class="header-left h-full"
+        :style="isMounted ? `width: ${stylesHeader.widthLeft}` : ''"
+      >
         <img
           class="h-full w-full object-cover"
           height="800"
@@ -90,7 +114,10 @@ onMounted(() => {
         />
       </div>
       <!-- HEADER RIGHT: MAIN IMAGE -->
-      <div class="header-right h-full relative" :style="isMounted ? `width: ${stylesHeader.widthRight}` : '' ">
+      <div
+        class="header-right h-full relative"
+        :style="isMounted ? `width: ${stylesHeader.widthRight}` : ''"
+      >
         <!-- TEXT & 1M IMAGE -->
         <div
           class="absolute top-[80%] md:top-1/2 transform -translate-y-1/2 left-0 z-10"
@@ -261,7 +288,8 @@ onMounted(() => {
       >
         <div class="h-[120px] md:h-[150px] overflow-hidden">
           <h1
-            class="header__main-text transform translate-y-[120px] md:translate-y-[150px] font-medium text-[60px] md:text-[72px] lg:text-[80px] xl:text-[100px] text-white text-center whitespace-nowrap leading-none md:leading-normal mb-5 md:mb-0" :style="isMounted ? `transform: ${stylesHeader.transformTo0}` : '' "
+            class="header__main-text transform translate-y-[120px] md:translate-y-[150px] font-medium text-[60px] md:text-[72px] lg:text-[80px] xl:text-[100px] text-white text-center whitespace-nowrap leading-none md:leading-normal mb-5 md:mb-0"
+            :style="isMounted ? `transform: ${stylesHeader.transformTo0}` : ''"
           >
             Let’s travel<br class="block md:hidden" />
             the world
@@ -269,7 +297,8 @@ onMounted(() => {
         </div>
         <div class="h-[68px] md:h-[40px] overflow-hidden">
           <p
-            class="header__secondary-text transform translate-y-[68px] md:translate-y-[40px] max-w-10/12 mx-auto font-medium text-[20px] md:text-[22px] lg:text-[26px] text-white text-center" :style="isMounted ? `transform: ${stylesHeader.transformTo0}` : '' "
+            class="header__secondary-text transform translate-y-[68px] md:translate-y-[40px] max-w-10/12 mx-auto font-medium text-[20px] md:text-[22px] lg:text-[26px] text-white text-center"
+            :style="isMounted ? `transform: ${stylesHeader.transformTo0}` : ''"
           >
             Explore destinations, places, and unforgettable experiences
           </p>
@@ -635,7 +664,7 @@ onMounted(() => {
     </div>
   </main>
   <!-- EXCAPE TO PARADISE -->
-  <section id="escape-paradise">
+  <section id="escape-paradise" ref="refEscapeParadise">
     <div
       class="container-travelers py-[90px] md:py-[100px] lg:py-[120px] px-5 md:px-5 lg:px-0"
     >
@@ -648,6 +677,11 @@ onMounted(() => {
             <div class="inline-block h-[47px] overflow-hidden">
               <span
                 class="escape-paradise__main-text inline-block transform translate-y-[50px]"
+                :class="
+                  isScrollToEscapeParadise
+                    ? 'escape-paradise__main-text-animation'
+                    : ''
+                "
                 style="--animation-order: 1"
                 >Escape to paradise: discover</span
               >
@@ -655,6 +689,11 @@ onMounted(() => {
             <div class="inline-block h-[47px] overflow-hidden">
               <span
                 class="escape-paradise__main-text inline-block transform translate-y-[50px]"
+                :class="
+                  isScrollToEscapeParadise
+                    ? 'escape-paradise__main-text-animation'
+                    : ''
+                "
                 style="--animation-order: 2"
                 >unforgettable luxury at our</span
               >
@@ -662,6 +701,11 @@ onMounted(() => {
             <div class="inline-block h-[47px] overflow-hidden">
               <span
                 class="escape-paradise__main-text inline-block transform translate-y-[50px]"
+                :class="
+                  isScrollToEscapeParadise
+                    ? 'escape-paradise__main-text-animation'
+                    : ''
+                "
                 style="--animation-order: 3"
                 >exquisite travel hotel</span
               >
@@ -833,6 +877,7 @@ onMounted(() => {
                 class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative left-0 z-[1]"
                 height="42"
                 width="42"
+                :class="isScrollToEscapeParadise ? 'left-0' : ''"
                 src="/images/escape-user-1.png"
                 alt="User 1"
               />
@@ -840,6 +885,7 @@ onMounted(() => {
                 class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[8px] z-[2]"
                 height="42"
                 width="42"
+                :class="isScrollToEscapeParadise ? 'left-0' : ''"
                 src="/images/escape-user-2.png"
                 alt="User 2"
               />
@@ -847,6 +893,7 @@ onMounted(() => {
                 class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[18px] z-[3]"
                 height="42"
                 width="42"
+                :class="isScrollToEscapeParadise ? 'left-0' : ''"
                 src="/images/escape-user-3.png"
                 alt="User 3"
               />
@@ -854,6 +901,7 @@ onMounted(() => {
                 class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[28px] z-[4]"
                 height="42"
                 width="42"
+                :class="isScrollToEscapeParadise ? 'left-0' : ''"
                 src="/images/escape-user-4.png"
                 alt="User 4"
               />
@@ -861,6 +909,7 @@ onMounted(() => {
                 class="escape-paradise__image-slide h-[34px] w-[34px] md:h-[40px] md:w-[40px] lg:h-[42px] lg:w-[42px] rounded-full relative -left-[38px] z-[5]"
                 height="42"
                 width="42"
+                :class="isScrollToEscapeParadise ? 'left-0' : ''"
                 src="/images/escape-user-plus.png"
                 alt="User 1"
               />
@@ -1435,7 +1484,7 @@ onMounted(() => {
     </div>
   </section>
   <!-- NOTIFICATION FROM US -->
-  <section id="notification">
+  <section id="notification" ref="refNotification">
     <div
       class="container-travelers pb-[90px] md:pb-[100px] lg:pb-[120px] px-5 md:px-5 lg:px-0"
     >
@@ -1449,6 +1498,7 @@ onMounted(() => {
           <div class="h-[100px] md:h-[55px] overflow-hidden">
             <h2
               class="notification__main-text transform translate-y-[105px] md:translate-y-[60px] font-medium text-[32px] md:text-[36px] lg:text-[40px] text-white leading-[40px] md:leading-[48px] lg:leading-[52px] mb-[14px] md:mb-[18px]"
+              :style="positionNotification ? 'transform: translateY(0px)' : ''"
             >
               Get up to date<br class="block md:hidden" />
               notifications from us
@@ -1457,6 +1507,7 @@ onMounted(() => {
           <div class="h-[30px] overflow-hidden">
             <p
               class="notification__secondary-text transform translate-y-[80px] font-medium text-white text-[18px]"
+              :style="positionNotification ? 'transform: translateY(0px)' : ''"
             >
               Subscribe now for free!
             </p>
