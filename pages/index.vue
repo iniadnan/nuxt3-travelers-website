@@ -92,6 +92,14 @@ onMounted(() => {
     },
   });
 });
+
+useSeoMeta({
+  title: 'Let’s travel the world',
+  ogTitle: 'Let’s travel the world',
+  author: 'iniadnan',
+  description: 'Explore destinations, places, and unforgettable experiences.',
+  ogDescription: 'Explore destinations, places, and unforgettable experiences.',
+})
 </script>
 
 <template>
